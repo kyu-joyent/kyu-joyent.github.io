@@ -1,0 +1,24 @@
+name: master
+
+on:
+  push:
+    branches:
+      - master    # master 브랜치에서 push 이벤트가 일어났을 때 실행
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@master
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::137260306892:role/GithubActionRole
+        aws-region: us-east-1
+        audience: sts.samsungspc.com
+        aws-access-key-id: AKIA66HZZZAH4K08UOWY
+        aws-secret-access-key: NFzwfYlmCJnQEmH3CnWv21hsezSemmKdHD4kWj/I
+    - name: upload to Gage KR 
+      env: 
+        AWS_DATA_PATH: dist/models
