@@ -13,6 +13,8 @@ jobs:
       uses: actions/checkout@master
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
+      env: 
+        AWS_DATA_PATH: models
       with:
         role-to-assume: arn:aws:iam::137260306892:role/GithubActionRole
         aws-region: ap-northeast-1
