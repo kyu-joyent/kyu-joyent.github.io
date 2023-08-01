@@ -15,10 +15,15 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v2
       with:
         role-to-assume: arn:aws:iam::137260306892:role/GithubActionRole
-        aws-region: us-east-1
+        aws-region: ap-northeast-1
         audience: sts.samsungspc.com
         aws-access-key-id: AKIA66HZZZAH4K08UOWY
         aws-secret-access-key: NFzwfYlmCJnQEmH3CnWv21hsezSemmKdHD4kWj/I
     - name: upload to Gage KR 
       env: 
         AWS_DATA_PATH: models
+      run: |
+          aws s3 cp \
+            --recursive \
+            --region ap-northeast-1 \
+            . s3://gatest
