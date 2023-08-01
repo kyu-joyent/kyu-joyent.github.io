@@ -13,10 +13,11 @@ jobs:
       uses: actions/checkout@master
     - name: Check S3 connection 
       env:
+        AWS_DATA_PATH: models
         AWS_ACCESS_KEY_ID: AKIA66HZZZAH4K08UOWY
         AWS_SECRET_ACCESS_KEY: NFzwfYlmCJnQEmH3CnWv21hsezSemmKdHD4kWj/I
       run: |
-         aws s3 ls --region ap-northeast-1
+         ls -al && pwd && aws s3 ls --region ap-northeast-1
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       env: 
