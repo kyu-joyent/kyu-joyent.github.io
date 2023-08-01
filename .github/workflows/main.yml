@@ -17,7 +17,7 @@ jobs:
         AWS_ACCESS_KEY_ID: AKIA66HZZZAH4K08UOWY
         AWS_SECRET_ACCESS_KEY: NFzwfYlmCJnQEmH3CnWv21hsezSemmKdHD4kWj/I
       run: |
-         ls -al && pwd && cat ~/.aws/* && aws s3 ls --region ap-northeast-1
+         ls -al && pwd  && aws s3 ls --region ap-northeast-1
 
     - name: upload to Gage KR 
       env: 
