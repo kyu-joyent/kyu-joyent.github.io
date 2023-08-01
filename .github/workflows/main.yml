@@ -21,4 +21,4 @@ jobs:
         aws-secret-access-key: NFzwfYlmCJnQEmH3CnWv21hsezSemmKdHD4kWj/I
     - name: upload to Gage KR 
       env: 
-        AWS_DATA_PATH: dist/models
+        AWS_DATA_PATH: models
